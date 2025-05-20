@@ -48,14 +48,14 @@ jobs:
         # You can remove the one that doesn't apply to your app to speed up the workflow a bit.
         
         # 如果你使用的是pnpm，需要先安装pnpm，官方示例使用的是yarn，使用没有这一步。
-      # - name: install pnpm
-      #   uses: pnpm/action-setup@v4
-      #   with:
-      #     version: 8
-      #     run_install: true
+      - name: install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+          run_install: true
 
       - name: install frontend dependencies
-        run: yarn install
+        run: pnpm install
 		
 		# 注意这个地方的环境变量，除GITHUB_TOKEN外，其他的需要手动进行配置。
       - uses: tauri-apps/tauri-action@v0
