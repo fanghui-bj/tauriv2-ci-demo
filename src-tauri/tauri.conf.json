@@ -36,8 +36,8 @@
   "plugins": {
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ4MENCNkQxNEIwRkYwM0EKUldRNjhBOUwwYllNU0drbE5UVHAxZk1iK3J6KzJlUmJnckdaa3pieHBtc3ZsRldDQTNCc1Q0eVEK",
-      "endpoints": ["https://fanghui-bj.github.io/tauri-app-updates/latest.json"]
-      
+      "endpoints": ["http://192.168.31.11:8000/latest.json"],
+      "dangerousInsecureTransportProtocol": true
     }
   }
 }
