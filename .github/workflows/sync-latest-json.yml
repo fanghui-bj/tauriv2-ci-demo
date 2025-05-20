@@ -1,0 +1,29 @@
+name: Sync latest.json to public repo
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - latest.json
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout private repo
+        uses: actions/checkout@v4
+
+      - name: Copy latest.json to temp folder
+        run: |
+          mkdir public
+          cp latest.json public/
+
+      - name: Push to public repo's gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
+          external_repository: your-username/your-public-updates-repo
+          publish_branch: gh-pages
+          publish_dir: ./public

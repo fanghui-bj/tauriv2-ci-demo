@@ -89,3 +89,18 @@ jobs:
           releaseDraft: false
           prerelease: false
           args: ${{ matrix.args }}
+
+      - name: Sync latest.json to public repo
+        run: |
+          curl -H "Authorization: token ${{ secrets.PERSONAL_TOKEN }}" \
+               -L "https://github.com/fanghui-bj/tauriv2-ci-demo/releases/latest/download/latest.json" \
+               -o latest.json
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git clone https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/fanghui-bj/tauri-app-updates.git
+          cd tauri-app-updates
+          git switch gh-pages || git checkout --orphan gh-pages
+          cp ../latest.json .
+          git add latest.json
+          git commit -m "Update latest.json from private repo"
+          git push origin gh-pages

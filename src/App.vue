@@ -12,7 +12,6 @@ const appName = ref();
 const init = async () => {
   appVersion.value = await getVersion();
   appName.value = await getName();
-
   const update = await check();
   if (update) {
     console.log(
