@@ -34,6 +34,14 @@ jobs:
         with:
           node-version: lts/*
 
+      - name: Cache Rust
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo
+            ~/.rustup
+          key: ${{ runner.os }}-rust-${{ hashFiles('**/Cargo.lock') }}
+
       - name: install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -54,6 +62,16 @@ jobs:
         with:
           version: 8
           run_install: true
+
+      - name: Cache pnpm store
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.pnpm-store
+            node_modules
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
 
       - name: install frontend dependencies
         run: pnpm install
