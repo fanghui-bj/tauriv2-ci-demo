@@ -55,7 +55,7 @@ jobs:
       #     run_install: true
 
       - name: install frontend dependencies
-        run: yarn
+        run: yarn install
 		
 		# 注意这个地方的环境变量，除GITHUB_TOKEN外，其他的需要手动进行配置。
       - uses: tauri-apps/tauri-action@v0
