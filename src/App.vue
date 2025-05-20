@@ -1,18 +1,14 @@
 <script setup lang="ts">
-import { check } from "@tauri-apps/plugin-updater";
-import { relaunch } from "@tauri-apps/plugin-process";
+// import { check } from "@tauri-apps/plugin-updater";
+// import { relaunch } from "@tauri-apps/plugin-process";
 
 import { ref, onMounted } from "vue";
-import { invoke } from "@tauri-apps/api/core";
+
 import { getVersion, getName } from "@tauri-apps/api/app";
-const greetMsg = ref("");
-const name = ref("");
+
 const appVersion = ref();
 const appName = ref();
-async function greet() {
-  // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-  greetMsg.value = await invoke("greet", { name: name.value });
-}
+
 
 // const update = await check();
 // if (update) {
