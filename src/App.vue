@@ -38,6 +38,8 @@ const init = async () => {
 
     console.log("update installed");
     await relaunch();
+    // appVersion.value = await getVersion();
+    // appName.value = await getName();
   }
 };
 
