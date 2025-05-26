@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "tauri-ci-demo",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "identifier": "com.tauri-ci-demo.app",
   "build": {
     "beforeDevCommand": "yarn dev",
@@ -36,7 +36,7 @@
   "plugins": {
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDEwNDUwMjg2NzAwNzVCRApSV1M5ZFFCbktGQUVBY1RlcXVFenZrTENUWHNYdTE1YlRzcTBUVXpDeHRPNWNpYUpTMlpPRlN1Ywo=",
-      "endpoints": ["http://192.168.31.11:8000/latest.json"],
+      "endpoints": ["http://192.168.31.11:8000/latest-test.json"],
       "dangerousInsecureTransportProtocol": true
     }
   }

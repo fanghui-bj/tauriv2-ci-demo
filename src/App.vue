@@ -51,7 +51,7 @@ onMounted(() => {
 <template>
   <main class="container">
     <h1>应用名称：{{ appName }} <br />当前版本：{{ appVersion }}<br /></h1>
-    <h2>欢迎使用 Tauri + Vue 3 + Vite 最新版本 0.2.4</h2>
+    <h2>欢迎使用 Tauri + Vue 3 + Vite 最新版本 0.2.5</h2>
   </main>
 </template>
 
